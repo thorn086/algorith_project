@@ -14,6 +14,21 @@
 //       ' ### '
 //       '#####'
 
-function pyramid(n) {}
+function pyramid(n) {
+    //iterative solution first
+    //recursive after
+    const middle = Math.floor((2*n-1)/2);
+    for (let row=0; row < n; row++){
+        let level ='';
+        for (let column =0; column< 2*n-1; column++){
+            if (middle - row <= column && middle + row >=   bvxz  v olumn){
+                level += '#';
+            }else{
+                level += ' ';
+            }
+        }
+        console.log(level);
+    }
+}
 
 module.exports = pyramid;

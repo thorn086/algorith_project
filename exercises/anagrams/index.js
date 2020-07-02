@@ -9,15 +9,14 @@
 //   anagrams('Hi there', 'Bye there') --> False
 
 function anagrams(stringA, stringB) {
-  const a = convertStr(stringA);
+  const a =  convertStr(stringA);
   const b = convertStr(stringB);
 
   return a === b;
 }
-function convertStr(str){
-  return str.replace(/[^\w]/g, '').toLowerCase().split('').sort().join('');
+function convertStr(str) {
+  return str.replace(/[^\w]/g).split('').sort().join('');
 }
-
 
 module.exports = anagrams;
 // const aCharMap = charOnly(stringA);
