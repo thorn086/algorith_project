@@ -8,7 +8,20 @@
 function maxChar(str) {
     // make the str into an object
     //count str and return larges number
+    let charStr = {};
+    let max =0;
+    let maxChar = '';
+    for (let char of str){
+        charStr[char] = charStr[char]+1 || 1;
+    }
     
+    for (let char in charStr){
+        if(charStr[char]>max){
+            max = charStr[char];
+            maxChar = char
+        }
+    }
+    return maxChar;
 }
 
 module.exports = maxChar;
