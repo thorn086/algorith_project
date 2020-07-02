@@ -4,10 +4,12 @@
 // --- Examples
 // maxChar("abcccccccd") === "c"
 // maxChar("apple 1231111") === "1"
-
-function maxChar(str) {
-    // make the str into an object
+// make the str into an object
     //count str and return larges number
+
+    
+function maxChar(str) {
+    
     let charStr = {};
     let max =0;
     let maxChar = '';
