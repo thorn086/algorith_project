@@ -14,21 +14,41 @@
 //       ' ### '
 //       '#####'
 
-function pyramid(n) {
-    //iterative solution first
-    //recursive after
-    const middle = Math.floor((2*n-1)/2);
-    for (let row=0; row < n; row++){
-        let level ='';
-        for (let column =0; column< 2*n-1; column++){
-            if (middle - row <= column && middle + row >=   bvxz  v olumn){
-                level += '#';
-            }else{
-                level += ' ';
-            }
-        }
-        console.log(level);
+function pyramid(n, row =0, level ='') {
+
+    if (row === n){   // base case (know when the recursion should stop)
+        return;
     }
+
+    if (level.length === 2*n-1){
+        console.log(level);
+        return pyramid(n,row+1);
+    }
+
+    const midpoint = Math.floor((2*n -1)/2);
+    
+    let add;
+    if (midpoint - row <= level.length && midpoint + row >= level.length){
+        add = '#';
+    } else {
+        add = ' ';
+    }
+    pyramid(n,row, level +add)
 }
 
 module.exports = pyramid;
+//iterative solution first
+   
+    // const middle = Math.floor((2*n-1)/2);
+    // for (let row=0; row < n; row++){
+    //     let level ='';
+    //     for (let column =0; column< 2*n-1; column++){
+    //         if (middle - row <= column && middle + row >= column){
+    //             level += '#';
+    //         }else{
+    //             level += ' ';
+    //         }
+    //     }
+    //     console.log(level);
+    // } 
+    //recursive after
